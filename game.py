@@ -20,7 +20,7 @@ class Card:
 
     def get_value
         pass
-
+ 
     def shuffle:
         pass
 
