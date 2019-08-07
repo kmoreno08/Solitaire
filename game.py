@@ -7,6 +7,8 @@ king with ranks 1-13. '''
 
 import random
 from random import shuffle
+import pygame
+pygame.init()
 
 class Card(object):
     def __init__(self, suit, val):
@@ -14,13 +16,10 @@ class Card(object):
         self.value = val
 
     #Implementing build in methods to print card object
-    def __unicode__(self):
-        return self.show()
     def __str__(self):
         return self.show()
-    def __repr__(self):
-        return self.show()
 
+    #Change number values to face cards
     def show(self):
         if self.value == 1:
             val = "Ace"
@@ -32,18 +31,9 @@ class Card(object):
             val = "King"
         else:
             val = self.value
-
+        
         return "{} of {}".format(val, self.suit)
         
-   #''' def get_rank():
-        #return [ "Ace", "2", "3", "4", "5", "6", "7","8", "9", "10", "Jack", "Queen", "King" ]
-
-    #def get_suit():
-        #return ["Clubs", "Diamonds", "Hearts", "Spades"]
-
-   # def get_value():
-        #pass'''
-
 
     def deal():
         pass
@@ -65,9 +55,12 @@ class Deck(object):
     #Generate 52 cards
     def build(self):
         self.cards = []
+        #Loop for suits
         for suit in ['Hearts', 'Clubs', 'Diamonds', 'Spades']:
+            #Each suit 1 - 14
             for val in range(1,14):
                 self.cards.append(Card(suit, val))
+                
 
      #Shuffle the deck
     def shuffle(self, num=1):
@@ -75,23 +68,48 @@ class Deck(object):
         for _ in range(num):
             #fisher yates shuffle algorithm
             for i in range(length-1, 0, -1):
+                #Random index
                 randi = random.randint(0, i)
                 if i == randi:
                     continue
-                #Can also use the build in shuffle method
-                #random.shuffle(self.cards)
+                self.cards[i], self.cards[randi] = self.cards[randi], self.cards[i]
+                #Shuffle cards
+                random.shuffle(self.cards)
 
 
-    #Return the top card
+    #Return the top card 
     def deal(self):
         return self.cards.pop()
 
 
-card = Card('Spades', 6)
-print(card.show())
-myDeck = Deck()
-myDeck.shuffle()
-myDeck.show()
+
+##Test
+#deck = Deck()
+#deck.shuffle()
+#deck.show()
+#card = deck.deal()
+#card2 = deck.deal()
+#card3 = deck.deal()
+
+
+#pygame
+gameDisplay = pygame.display.set_mode((800, 600))
+pygame.display.set_caption('Solitaire')
+clock = pygame.time.Clock()
+
+
+#Exit if no cards left
+no_moves = False
+while not no_moves:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            no_moves = True
+
+
+        print(event)
+
+    pygame.display.update()
+
 
 
 
