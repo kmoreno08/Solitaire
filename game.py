@@ -8,7 +8,7 @@ king with ranks 1-13. '''
 import random
 from random import shuffle
 import pygame
-pygame.init()
+
 
 class Card(object):
     def __init__(self, suit, val):
@@ -92,13 +92,17 @@ class Deck(object):
 #card3 = deck.deal()
 
 
-#pygame
+#Creates screen
 gameDisplay = pygame.display.set_mode((800, 600))
+pygame.init()
 pygame.display.set_caption('Solitaire')
 clock = pygame.time.Clock()
-
+#Color for background
+background_color =[12, 222, 9]
+gameDisplay.fill(background_color)
 
 #Exit if no cards left
+#This will probably not be needed unless have a way to calculate there are no more moves left
 no_moves = False
 while not no_moves:
     for event in pygame.event.get():
