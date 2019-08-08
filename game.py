@@ -128,33 +128,47 @@ def main():
             
         #First foundation
         pygame.draw.rect(gameDisplay, [0,0,0], (900, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (905, 130, 140, 200))
         #Second foundation
         pygame.draw.rect(gameDisplay, [0,0,0], (1100, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1105, 130, 140, 200))
         #Third foundation
         pygame.draw.rect(gameDisplay, [0,0,0], (1300, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1305, 130, 140, 200))
         #Fourth foundation
         pygame.draw.rect(gameDisplay, [0,0,0], (1500, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1505, 130, 140, 200))
             
         #Tableau - 1
         pygame.draw.rect(gameDisplay, [0,0,0], (300, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (305, 355, 140, 200))
+        
         #Tableau - 2
         pygame.draw.rect(gameDisplay, [0,0,0], (500, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (505, 355, 140, 200))
         #Tableau - 3
         pygame.draw.rect(gameDisplay, [0,0,0], (700, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (705, 355, 140, 200))
         #Tableau - 4
         pygame.draw.rect(gameDisplay, [0,0,0], (900, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (905, 355, 140, 200))
         #Tableau - 5
         pygame.draw.rect(gameDisplay, [0,0,0], (1100, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1105, 355, 140, 200))
         #Tableau - 6
         pygame.draw.rect(gameDisplay, [0,0,0], (1300, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1305, 355, 140, 200))
         #Tableau - 7
         pygame.draw.rect(gameDisplay, [0,0,0], (1500, 350, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (1505, 355, 140, 200))
         
 
         #The stock - 1
         pygame.draw.rect(gameDisplay, [0,0,0], (300, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (305, 130, 140, 200))
         #The stock - 2
         pygame.draw.rect(gameDisplay, [0,0,0], (500, 125, 150, 210))
+        pygame.draw.rect(gameDisplay, [41,194,76], (505, 130, 140, 200))
 
         #Update screen
         pygame.display.update()
