@@ -93,28 +93,72 @@ class Deck(object):
 
 
 #Creates screen
-gameDisplay = pygame.display.set_mode((800, 600))
+gameDisplay = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 pygame.init()
 pygame.display.set_caption('Solitaire')
 clock = pygame.time.Clock()
 #Color for background
-background_color =[12, 222, 9]
+background_color =[41, 194, 76]
 gameDisplay.fill(background_color)
 
-#Exit if no cards left
-#This will probably not be needed unless have a way to calculate there are no more moves left
-no_moves = False
-while not no_moves:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            no_moves = True
 
 
-        print(event)
-
-    pygame.display.update()
 
 
+
+'''_image_library = {} <--- use for later
+def get_image(path):
+        global _image_library
+        image = _image_library.get(path)
+        if image == None:
+                canonicalized_path = path.replace('/', os.sep).replace('\\', os.sep)
+                image = pygame.image.load(canonicalized_path)
+                _image_library[path] = image
+        return image'''
+
+
+
+def main():
+    game_exit = False
+    while not game_exit:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                game_exit = True
+            print(event)
+            
+        #First foundation
+        pygame.draw.rect(gameDisplay, [0,0,0], (900, 125, 150, 210))
+        #Second foundation
+        pygame.draw.rect(gameDisplay, [0,0,0], (1100, 125, 150, 210))
+        #Third foundation
+        pygame.draw.rect(gameDisplay, [0,0,0], (1300, 125, 150, 210))
+        #Fourth foundation
+        pygame.draw.rect(gameDisplay, [0,0,0], (1500, 125, 150, 210))
+            
+        #Tableau - 1
+        pygame.draw.rect(gameDisplay, [0,0,0], (300, 350, 150, 210))
+        #Tableau - 2
+        pygame.draw.rect(gameDisplay, [0,0,0], (500, 350, 150, 210))
+        #Tableau - 3
+        pygame.draw.rect(gameDisplay, [0,0,0], (700, 350, 150, 210))
+        #Tableau - 4
+        pygame.draw.rect(gameDisplay, [0,0,0], (900, 350, 150, 210))
+        #Tableau - 5
+        pygame.draw.rect(gameDisplay, [0,0,0], (1100, 350, 150, 210))
+        #Tableau - 6
+        pygame.draw.rect(gameDisplay, [0,0,0], (1300, 350, 150, 210))
+        #Tableau - 7
+        pygame.draw.rect(gameDisplay, [0,0,0], (1500, 350, 150, 210))
+        
+
+        #The stock - 1
+        pygame.draw.rect(gameDisplay, [0,0,0], (300, 125, 150, 210))
+        #The stock - 2
+        pygame.draw.rect(gameDisplay, [0,0,0], (500, 125, 150, 210))
+
+        #Update screen
+        pygame.display.update()
+main()
 
 
 
