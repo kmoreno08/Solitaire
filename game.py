@@ -1,10 +1,11 @@
+#print(os.getcwd())
 #Solitaire
 '''Writing a program to play the popular card game of solitaire. Suites are represented
 by their first letter: 'S', 'D', 'H', 'C'. Each suit has 13 cards from ace,2-10,jack, queen,
 king with ranks 1-13. '''
 
 
-
+import os
 import random
 from random import shuffle
 import pygame
@@ -117,7 +118,14 @@ def get_image(path):
         return image'''
 
 
+cardImg = pygame.image.load(r'C:\Users\Kevin Steven Moreno\Desktop\Git\Solitaire\img\2_of_clubs.png')
 
+
+
+def card(x,y):
+    gameDisplay.blit(cardImg, (x,y))
+
+    
 def main():
     game_exit = False
     while not game_exit:
@@ -125,7 +133,7 @@ def main():
             if event.type == pygame.QUIT:
                 game_exit = True
             print(event)
-            
+
         #First foundation
         pygame.draw.rect(gameDisplay, [0,0,0], (900, 125, 150, 210))
         pygame.draw.rect(gameDisplay, [41,194,76], (905, 130, 140, 200))
@@ -171,7 +179,9 @@ def main():
         pygame.draw.rect(gameDisplay, [41,194,76], (505, 130, 140, 200))
 
         #Update screen
+        card(50, 150)
         pygame.display.update()
+        clock.tick(60)
 main()
 
 
