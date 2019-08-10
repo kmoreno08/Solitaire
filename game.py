@@ -1,4 +1,4 @@
-#print(os.getcwd())
+
 #Solitaire
 '''Writing a program to play the popular card game of solitaire. Suites are represented
 by their first letter: 'S', 'D', 'H', 'C'. Each suit has 13 cards from ace,2-10,jack, queen,
@@ -106,7 +106,7 @@ gameDisplay.fill(background_color)
 
 
 
-
+#Can load full image library here
 '''_image_library = {} <--- use for later
 def get_image(path):
         global _image_library
@@ -182,6 +182,9 @@ def main():
         card(50, 150)
         pygame.display.update()
         clock.tick(60)
+
+
+        
 main()
 
 
